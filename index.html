@@ -68,11 +68,20 @@
       document.querySelector('.thumbnail_btn').addEventListener('click', () => {
 
          URL = document.querySelector('.inp_url').value;
-         URL = URL.split('=')[1];
+
+         if (URL.includes('www')) {
+            URL = URL.split('=')[1];
+         } else {
+            URL = URL.split('/')[3];
+            URL = URL.split('?')[0];
+            console.log(URL);
+         }
 
          for (let i = 0; i < 5; i++) {
             document.querySelectorAll('.thumbnail_img')[i].classList.add('show');
          }
+
+
 
          document.querySelector('.default').src = `https://img.youtube.com/vi/${URL}/default.jpg`;
          document.querySelector('.mqdefault').src = `https://img.youtube.com/vi/${URL}/mqdefault.jpg`;
