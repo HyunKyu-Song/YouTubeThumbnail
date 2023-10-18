@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="icon" href="./favicon.ico" type="image/x-icon">
+   <title>YouTube 썸네일 생성기</title>
+</head>
+
+<body>
+
+   <header>
+      <h2>
+         <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> YouTube 썸네일 생성기
+         <i class="fa-regular fa-circle-question qyestuib_icon"></i>
+      </h2>
+   </header>
+
+   <main>
+      <div class="alert_box">
+         <div style="text-align: end; margin: 15px; margin-bottom: 0;">
+            <i class="x_mark_icon fa-solid fa-2x fa-rectangle-xmark"></i>
+         </div>
+         <h3 style="margin-bottom: 30px">썸네일 저장하는 법 </h3>
+         <p>1. YouTube에서 원하는 영상 URL 복사</p>
+         <p>2. 복사한 URL을 입력창에 붙여넣기</p>
+         <P>3. 생성 버튼 클릭</P>
+         <P>4. 원하는 크기에 이미지를 우클릭</P>
+         <P>5. 이미지를 다른 이름으로 저장 클릭</P>
+      </div>
+
+      <div class="inp_box">
+         <input type="text" class="inp_url" placeholder="원하는 YouTube 영상 URL을 입력"> <button
+            class="thumbnail_btn">생성</button>
+      </div>
+
+      <div class="img_box">
+         <div class="thumbnail_img">
+            <img src="" alt="썸네일" class="default">
+            <p>120x90</p>
+         </div>
+         <div class="thumbnail_img">
+            <img src="" alt="썸네일" class="mqdefault">
+            <p>320x180</p>
+         </div>
+         <div class="thumbnail_img">
+            <img src="" alt="썸네일" class="hqdefault">
+            <p>480x360</p>
+         </div>
+         <div class="thumbnail_img">
+            <img src="" alt="썸네일" class="sddefault">
+            <p>640x480</p>
+         </div>
+         <div class="thumbnail_img">
+            <img src="" alt="썸네일" class="maxresdefault">
+            <p>1280x720</p>
+         </div>
+      </div>
+
+   </main>
+
+
+   <script>
+      let URL;
+      document.querySelector('.thumbnail_btn').addEventListener('click', () => {
+
+         URL = document.querySelector('.inp_url').value;
+         URL = URL.split('=')[1];
+
+         for (let i = 0; i < 5; i++) {
+            document.querySelectorAll('.thumbnail_img')[i].classList.add('show');
+         }
+
+         document.querySelector('.default').src = `https://img.youtube.com/vi/${URL}/default.jpg`;
+         document.querySelector('.mqdefault').src = `https://img.youtube.com/vi/${URL}/mqdefault.jpg`;
+         document.querySelector('.hqdefault').src = `https://img.youtube.com/vi/${URL}/hqdefault.jpg`;
+         document.querySelector('.sddefault').src = `https://img.youtube.com/vi/${URL}/sddefault.jpg`;
+         document.querySelector('.maxresdefault').src = `https://img.youtube.com/vi/${URL}/maxresdefault.jpg`;
+      })
+
+      document.querySelector('.qyestuib_icon').addEventListener('click', () => {
+         document.querySelector('.alert_box').classList.toggle('show');
+      })
+      document.querySelector('.x_mark_icon').addEventListener('click', () => {
+         document.querySelector('.alert_box').classList.toggle('show');
+      })
+   </script>
+
+</body>
+
+</html>
