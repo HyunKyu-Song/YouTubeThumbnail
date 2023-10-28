@@ -14,8 +14,10 @@
 
    <header>
       <h2>
-         <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> YouTube 썸네일 생성기
-         <i class="fa-regular fa-circle-question qyestuib_icon"></i>
+         <a href="https://www.youtube.com/" target="_blank" title="YouTube로 이동"><i class="fa-brands fa-youtube"
+               style="color: #FF0000;"></i></a> YouTube 썸네일
+         생성기
+         <i class="fa-regular fa-circle-question qyestuib_icon" title="사용법"></i>
       </h2>
    </header>
 
@@ -33,8 +35,8 @@
       </div>
 
       <div class="inp_box">
-         <input type="text" class="inp_url" placeholder="원하는 YouTube 영상 URL을 입력"> <button
-            class="thumbnail_btn">생성</button>
+         <input type="text" class="inp_url" placeholder="원하는 YouTube 영상 URL을 입력">
+         <button class="thumbnail_btn">생성</button> <button class="thumbnail_btn_reset">리셋</button>
       </div>
 
       <div class="img_box">
@@ -68,7 +70,14 @@
       document.querySelector('.thumbnail_btn').addEventListener('click', () => {
 
          URL = document.querySelector('.inp_url').value;
-         URL = URL.split('=')[1];
+
+         if (URL.includes('www')) {
+            URL = URL.split('=')[1];
+         } else {
+            URL = URL.split('/')[3];
+            URL = URL.split('?')[0];
+            console.log(URL);
+         }
 
          for (let i = 0; i < 5; i++) {
             document.querySelectorAll('.thumbnail_img')[i].classList.add('show');
@@ -86,6 +95,14 @@
       })
       document.querySelector('.x_mark_icon').addEventListener('click', () => {
          document.querySelector('.alert_box').classList.toggle('show');
+      })
+
+      document.querySelector('.thumbnail_btn_reset').addEventListener('click', () => {
+         document.querySelector('.inp_url').value = '';
+
+         for (let i = 0; i < 5; i++) {
+            document.querySelectorAll('.thumbnail_img')[i].classList.remove('show');
+         }
       })
    </script>
 
