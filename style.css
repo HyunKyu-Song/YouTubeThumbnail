@@ -1,123 +1,152 @@
 body {
-   margin: 0;
-   box-sizing: border-box;
-   background-color: #303030;
-   color: aliceblue;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #303030;
+  color: aliceblue;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 header {
-   text-align: center;
-   margin: 30px 0;
+  text-align: center;
+  margin: 30px 0;
 }
 
 .inp_box,
 .img_box {
-   text-align: center;
+  text-align: center;
 }
 
 .thumbnail_img {
-   display: none;
-   border-bottom: 1px solid white;
-   width: 1500px;
-   margin: auto;
-   margin-top: 15px;
-   margin-bottom: 15px;
+  display: none;
+  border-bottom: 1px solid white;
+  width: 1500px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .thumbnail_img p {
-   margin-top: 0;
+  margin-top: 0;
 }
 
-
 .inp_url {
-   border-radius: 15px;
-   border: none;
-   width: 300px;
-   height: 20px;
-   padding: 5px 12px;
-   text-align: center;
+  border-radius: 15px;
+  border: none;
+  width: 300px;
+  height: 20px;
+  padding: 5px 12px;
+  text-align: center;
 }
 
 .thumbnail_btn,
 .thumbnail_btn_reset {
-   cursor: pointer;
-   padding: 5px;
-   width: 45px;
-   border: none;
-   border-radius: 5px;
-   background-color: #dbd6d6;
+  cursor: pointer;
+  padding: 5px;
+  width: 45px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dbd6d6;
 }
 
 .qyestuib_icon,
 .x_mark_icon {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 .qyestuib_icon:hover,
 .x_mark_icon:hover {
-   color: red;
+  color: red;
+}
+
+.descriptionButton {
+  background-color: initial;
+  border: none;
+  font-size: 24px;
+}
+
+.title {
+  a {
+    color: #ff0000;
+    text-decoration: none;
+  }
+  span {
+    color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+  }
 }
 
 .alert_box {
-   display: none;
-   width: 400px;
-   height: 350px;
-   background-color: rgba(0, 0, 0, 0.904);
-   position: fixed;
-   border-radius: 15px;
-   text-align: center;
-   margin: auto;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
+  display: none;
+  width: 400px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.94);
+  position: fixed;
+  border-radius: 15px;
+  /* text-align: center; */
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.description {
+  padding: 0 50px;
+
+  strong {
+    color: rgba(253, 63, 63, 0.925);
+  }
 }
 
 .show {
-   display: block;
+  display: block;
 }
 
 @media screen and (max-width: 958px) {
-   .hqdefault {
-      width: 480px;
-   }
+  .hqdefault {
+    width: 480px;
+  }
 
-   .sddefault {
-      width: 640px;
-   }
+  .sddefault {
+    width: 640px;
+  }
 
-   .maxresdefault {
-      width: 800px;
-   }
+  .maxresdefault {
+    width: 800px;
+  }
 
-   .thumbnail_img {
-      border-bottom: 1px solid white;
-      width: 90%;
-   }
+  .thumbnail_img {
+    border-bottom: 1px solid white;
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-   h2 {
-      font-size: 20px;
-   }
+  h2 {
+    font-size: 20px;
+  }
 
-   .alert_box {
-      width: 90%;
-      font-size: 14px;
-   }
+  .alert_box {
+    width: 90%;
+    font-size: 14px;
+  }
 
-   .inp_url {
-      width: 250px;
-   }
+  .inp_url {
+    width: 250px;
+  }
 
-   .hqdefault,
-   .sddefault,
-   .maxresdefault {
-      width: 320px;
-   }
+  .hqdefault,
+  .sddefault,
+  .maxresdefault {
+    width: 320px;
+  }
 
-   .thumbnail_img {
-      border-bottom: 1px solid white;
-      width: 90%;
-   }
+  .thumbnail_img {
+    border-bottom: 1px solid white;
+    width: 90%;
+  }
 }

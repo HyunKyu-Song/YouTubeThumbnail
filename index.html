@@ -2,110 +2,156 @@
 <html lang="ko">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-   <link rel="icon" href="./favicon.ico" type="image/x-icon">
-   <title>YouTube 썸네일 생성기</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <title>YouTube 썸네일 생성기</title>
 </head>
 
 <body>
+  <header>
+    <h2 class="title">
+      <a href="https://www.youtube.com/" target="_blank" title="YouTube로 이동" class="youtubeLogo fa-brands fa-youtube">
+        <span>YouTube</span>
+      </a>
+      썸네일 생성기
+      <button type="button" class="descriptionButton fa-regular fa-circle-question qyestuib_icon" title="사용법">
+      </button>
+    </h2>
+  </header>
 
-   <header>
-      <h2>
-         <a href="https://www.youtube.com/" target="_blank" title="YouTube로 이동"><i class="fa-brands fa-youtube"
-               style="color: #FF0000;"></i></a> YouTube 썸네일
-         생성기
-         <i class="fa-regular fa-circle-question qyestuib_icon" title="사용법"></i>
-      </h2>
-   </header>
-
-   <main>
-      <div class="alert_box">
-         <div style="text-align: end; margin: 15px; margin-bottom: 0;">
-            <i class="x_mark_icon fa-solid fa-2x fa-rectangle-xmark"></i>
-         </div>
-         <h3 style="margin-bottom: 30px">썸네일 저장하는 법 </h3>
-         <p>1. YouTube에서 원하는 영상 URL 복사</p>
-         <p>2. 복사한 URL을 입력창에 붙여넣기</p>
-         <P>3. 생성 버튼 클릭</P>
-         <P>4. 원하는 크기에 이미지를 우클릭</P>
-         <P>5. 이미지를 다른 이름으로 저장 클릭</P>
+  <main>
+    <div class="alert_box">
+      <div style="text-align: end; margin: 15px; margin-bottom: 0">
+        <i class="x_mark_icon fa-solid fa-2x fa-rectangle-xmark"></i>
       </div>
+      <h3 style="margin-bottom: 30px">썸네일 저장하는 법</h3>
 
-      <div class="inp_box">
-         <input type="text" class="inp_url" placeholder="원하는 YouTube 영상 URL을 입력">
-         <button class="thumbnail_btn">생성</button> <button class="thumbnail_btn_reset">리셋</button>
+      <ol class="description" role="dialog">
+        <li>상단에 <strong>YouTube</strong> 로고 클릭</li>
+        <li>원하는 영상 URL 복사</li>
+        <li>복사한 URL을 입력창에 붙여넣기</li>
+        <li>생성 버튼 클릭</li>
+        <li>원하는 크기에 이미지를 우클릭</li>
+        <li>이미지를 다른 이름으로 저장!</li>
+      </ol>
+    </div>
+
+
+
+    <dialog class="modal">
+      모달창임
+      <button class="close_btn">닫기</button>
+    </dialog>
+
+    <button class="btn">Dialog 테스트</button>
+
+
+
+
+
+    <div class="inp_box">
+      <input type="text" class="inp_url" placeholder="원하는 YouTube 영상 URL을 입력" />
+      <button class="thumbnail_btn">생성</button>
+      <button class="thumbnail_btn_reset">리셋</button>
+    </div>
+
+    <div class="img_box">
+      <div class="thumbnail_img">
+        <img src="" alt="썸네일" class="default" />
+        <p>120x90</p>
       </div>
-
-      <div class="img_box">
-         <div class="thumbnail_img">
-            <img src="" alt="썸네일" class="default">
-            <p>120x90</p>
-         </div>
-         <div class="thumbnail_img">
-            <img src="" alt="썸네일" class="mqdefault">
-            <p>320x180</p>
-         </div>
-         <div class="thumbnail_img">
-            <img src="" alt="썸네일" class="hqdefault">
-            <p>480x360</p>
-         </div>
-         <div class="thumbnail_img">
-            <img src="" alt="썸네일" class="sddefault">
-            <p>640x480</p>
-         </div>
-         <div class="thumbnail_img">
-            <img src="" alt="썸네일" class="maxresdefault">
-            <p>1280x720</p>
-         </div>
+      <div class="thumbnail_img">
+        <img src="" alt="썸네일" class="mqdefault" />
+        <p>320x180</p>
       </div>
+      <div class="thumbnail_img">
+        <img src="" alt="썸네일" class="hqdefault" />
+        <p>480x360</p>
+      </div>
+      <div class="thumbnail_img">
+        <img src="" alt="썸네일" class="sddefault" />
+        <p>640x480</p>
+      </div>
+      <div class="thumbnail_img">
+        <img src="" alt="썸네일" class="maxresdefault" />
+        <p>1280x720</p>
+      </div>
+    </div>
+  </main>
 
-   </main>
+  <script>
+
+    document.querySelector('.btn').addEventListener('click', function () {
+      document.querySelector('.modal').showModal();
+    })
+
+    document.querySelector('.close_btn').addEventListener('click', function () {
+      document.querySelector('.modal').close();
+    })
 
 
-   <script>
-      let URL;
-      document.querySelector('.thumbnail_btn').addEventListener('click', () => {
 
-         URL = document.querySelector('.inp_url').value;
 
-         if (URL.includes('www')) {
-            URL = URL.split('=')[1];
-         } else {
-            URL = URL.split('/')[3];
-            URL = URL.split('?')[0];
-            console.log(URL);
-         }
 
-         for (let i = 0; i < 5; i++) {
-            document.querySelectorAll('.thumbnail_img')[i].classList.add('show');
-         }
 
-         document.querySelector('.default').src = `https://img.youtube.com/vi/${URL}/default.jpg`;
-         document.querySelector('.mqdefault').src = `https://img.youtube.com/vi/${URL}/mqdefault.jpg`;
-         document.querySelector('.hqdefault').src = `https://img.youtube.com/vi/${URL}/hqdefault.jpg`;
-         document.querySelector('.sddefault').src = `https://img.youtube.com/vi/${URL}/sddefault.jpg`;
-         document.querySelector('.maxresdefault').src = `https://img.youtube.com/vi/${URL}/maxresdefault.jpg`;
-      })
+    let URL;
+    document.querySelector(".thumbnail_btn").addEventListener("click", () => {
+      URL = document.querySelector(".inp_url").value;
 
-      document.querySelector('.qyestuib_icon').addEventListener('click', () => {
-         document.querySelector('.alert_box').classList.toggle('show');
-      })
-      document.querySelector('.x_mark_icon').addEventListener('click', () => {
-         document.querySelector('.alert_box').classList.toggle('show');
-      })
+      if (URL.includes("www")) {
+        URL = URL.split("=")[1];
+      } else {
+        URL = URL.split("/")[3];
+        URL = URL.split("?")[0];
+        console.log(URL);
+      }
 
-      document.querySelector('.thumbnail_btn_reset').addEventListener('click', () => {
-         document.querySelector('.inp_url').value = '';
+      for (let i = 0; i < 5; i++) {
+        document.querySelectorAll(".thumbnail_img")[i].classList.add("show");
+      }
 
-         for (let i = 0; i < 5; i++) {
-            document.querySelectorAll('.thumbnail_img')[i].classList.remove('show');
-         }
-      })
-   </script>
+      document.querySelector(
+        ".default"
+      ).src = `https://img.youtube.com/vi/${URL}/default.jpg`;
+      document.querySelector(
+        ".mqdefault"
+      ).src = `https://img.youtube.com/vi/${URL}/mqdefault.jpg`;
+      document.querySelector(
+        ".hqdefault"
+      ).src = `https://img.youtube.com/vi/${URL}/hqdefault.jpg`;
+      document.querySelector(
+        ".sddefault"
+      ).src = `https://img.youtube.com/vi/${URL}/sddefault.jpg`;
+      document.querySelector(
+        ".maxresdefault"
+      ).src = `https://img.youtube.com/vi/${URL}/maxresdefault.jpg`;
+    });
 
+    document.querySelector(".qyestuib_icon").addEventListener("click", () => {
+      document.querySelector(".alert_box").classList.toggle("show");
+    });
+    document.querySelector(".x_mark_icon").addEventListener("click", () => {
+      document.querySelector(".alert_box").classList.toggle("show");
+    });
+
+    document
+      .querySelector(".thumbnail_btn_reset")
+      .addEventListener("click", () => {
+        document.querySelector(".inp_url").value = "";
+
+        for (let i = 0; i < 5; i++) {
+          document
+            .querySelectorAll(".thumbnail_img")
+          [i].classList.remove("show");
+        }
+      });
+  </script>
 </body>
 
 </html>
